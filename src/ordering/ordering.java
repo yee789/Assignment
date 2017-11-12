@@ -8,6 +8,7 @@
  *
  * @author htchew
  */
+package ordering;
 class ordering {
     private String menuID;
     private String menuName;
