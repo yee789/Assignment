@@ -50,9 +50,10 @@ public class Registration {
         addmenu.setPrice(price);
         addmenu.setResName(restaurant_name);
         */
-             System.out.println("do you want to continue? Y/N");
+            scan.nextLine();
+             System.out.println("do you want to continue? Yes/No");
              ans = (scan.nextLine()).toUpperCase();
-        }while(ans == "Y");
+        }while(ans.equalsIgnoreCase("Yes"));
     }
     
     public void showDetail(){
