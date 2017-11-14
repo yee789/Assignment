@@ -11,17 +11,17 @@ import java.util.*;
 
 class First {
     DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
-    private static List<customer> custList = new ArrayList<>();
+    //private static List<customer> custList = new ArrayList<>();
     private static List<Menu1> m = menu.menu;
     private static List<ordering> oList = new ArrayList<>();
-    private static List<order> custOrder = new ArrayList<>();
+   // private static List<order> custOrder = new ArrayList<>();
     private static List<String> res = menu.Res;
     //private static List<ordering> tempO = new ArrayList<>();
     
     private static int orderID=1000;
     
     
-    public void customerProcess(){
+   /* public void customerProcess(){
         
        Scanner scan = new Scanner(System.in);
        String choice;
@@ -47,7 +47,7 @@ class First {
         
         
     }
-    
+    */
     public static String customerList(List custList){
         String str = "";
         for(int i=0; i<custList.size();++i){
@@ -112,7 +112,14 @@ class First {
         
         }while(yesno.equals("yes"));
         
-        System.out.println("Order Confirmation");
+        System.out.println("\nYour Order: ");
+         for(int i=0;i<oList.size();i++){
+           
+            System.out.println("MenuName: "+oList.get(i).getMenuName()+"\nQuantity: "+oList.get(i).getQty()+""
+                    + "\nUnit Price: RM"+oList.get(i).getPrice()+"\n");
+        }
+        //-------------Temporary closed 
+       /* System.out.println("Order Confirmation");
         System.out.println("==================");
         System.out.println("MenuName Quantity Unit Price(RM) Subtotal(RM)");
         System.out.println("=============================================");
@@ -136,13 +143,13 @@ class First {
             
             order order2 = new order(orderID, restaurant, currentDate, oList);
             custOrder.add(order2);
-            
+            System.out.println("Transaction Done!");
         //customerProcess();  
             
         }else{
-            System.out.println("hoho");
+            System.out.println("Order is discarded!");
         }
-        
+        */
     }
     
     public static void main(String args[]){
@@ -160,7 +167,7 @@ class First {
             */
             System.out.println("1.Go to Order");
             System.out.println("2.Add Menu(For restaurant owner)");
-            System.out.println("3.View Order List(Temporary)");
+            //System.out.println("3.View Order List(Temporary)");
             //System.out.println("4.Logout");
             System.out.println("----------------------------------");
         int choice;
@@ -172,14 +179,14 @@ class First {
             //System.out.println("=====================================");
             //System.out.println(showMenu(m));
             f1.orderProcess();
-            
+            break;
         }else if(choice==2){
             m1.addMenu();
-        }else if(choice==3){
+        }/*else if(choice==3){
             for(int i=0; i<custOrder.size();i++){
                 System.out.println(custOrder.get(i));
             }
-        }/*else if(choice==4){
+        }else if(choice==4){
             orderID++;
             oList.clear();
            
@@ -198,7 +205,7 @@ class First {
             //have to change
             System.out.println("Thank You!");
         }
-            System.out.println("(Press 0 to continue): ");
+            System.out.println("(Press any key to exit): ");
             cont=scan.nextInt();
         }while(cont==0);
         //System.out.println("Customer list:\n "+customerList(custList));
