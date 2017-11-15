@@ -42,6 +42,17 @@ public class menu {
         
         
     }
+    public void addDefaultMenu(){
+        menu.add(new Menu1("M1","Food 1","desc1","R1",10.00));
+        menu.add(new Menu1("M2","Food 2","desc2","R1",20.00));
+        menu.add(new Menu1("M3","Food 3","desc3","R1",20.00));
+        menu.add(new Menu1("B1","Food 4","desc4","R2",30.00));
+        menu.add(new Menu1("B2","Food 5","desc5","R2",40.00));
+        Res.add("R1");
+        Res.add("R1");
+        Res.add("R2");
+        System.out.println("Default Menu added, dont need add again");
+    }
     
     public String menuL(List menu){
         String str = "";

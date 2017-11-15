@@ -113,10 +113,12 @@ class First {
         }while(yesno.equals("yes"));
         
         System.out.println("\nYour Order: ");
+        System.out.println("MenuID MenuName Quantity Unit Price(RM)");
+        System.out.println("=======================================");
          for(int i=0;i<oList.size();i++){
            
-            System.out.println("MenuName: "+oList.get(i).getMenuName()+"\nQuantity: "+oList.get(i).getQty()+""
-                    + "\nUnit Price: RM"+oList.get(i).getPrice()+"\n");
+            System.out.println(oList.get(i).getMenuID()+"    "+ oList.get(i).getMenuName()+"     "+oList.get(i).getQty()+"      "
+                    + oList.get(i).getPrice());
         }
         //-------------Temporary closed 
        /* System.out.println("Order Confirmation");
@@ -181,7 +183,7 @@ class First {
             f1.orderProcess();
             break;
         }else if(choice==2){
-            m1.addMenu();
+            m1.addDefaultMenu();
         }/*else if(choice==3){
             for(int i=0; i<custOrder.size();i++){
                 System.out.println(custOrder.get(i));
@@ -205,7 +207,7 @@ class First {
             //have to change
             System.out.println("Thank You!");
         }
-            System.out.println("(Press any key to exit): ");
+            System.out.println("(Press 0 to continue): ");
             cont=scan.nextInt();
         }while(cont==0);
         //System.out.println("Customer list:\n "+customerList(custList));
