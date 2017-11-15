@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package demotime;
+package clockInClockOut;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -66,7 +66,7 @@ public class DemoTimerFrame extends javax.swing.JFrame {
         
         lblTime.setText(sdf.format(new java.util.Date()));
    }
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -141,9 +141,9 @@ public class DemoTimerFrame extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void btnClockInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClockInActionPerformed
+    private void btnClockInActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
         if(deliveryMan1.getClockInStatus()!="Clocked In"){
           Date clockedInDate = new Date();
@@ -156,9 +156,9 @@ public class DemoTimerFrame extends javax.swing.JFrame {
         }
            
   
-    }//GEN-LAST:event_btnClockInActionPerformed
+    }                                          
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 
              // Date clockedOutDate = new Date();
              
@@ -194,7 +194,7 @@ public class DemoTimerFrame extends javax.swing.JFrame {
         
 
 // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
 
     /**
      * @param args the command line arguments
