@@ -29,7 +29,7 @@ public class DemoTimerFrame extends javax.swing.JFrame {
      
       SimpleDateFormat sdf=new SimpleDateFormat("HH:mm:ss");
        Calendar clockedInTime = GregorianCalendar.getInstance();
-     deliveryMenDetails deliveryMan1 = new deliveryMenDetails("Ali",20,"Male","Active");
+     deliveryMenDetails deliveryMan1 = new deliveryMenDetails("Ahmad",20,"Male","Active");
       
     public DemoTimerFrame() {
         initComponents();
