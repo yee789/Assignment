@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package demotime;
+package clockInClockOut;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -29,7 +29,7 @@ public class DemoTimerFrame extends javax.swing.JFrame {
      
       SimpleDateFormat sdf=new SimpleDateFormat("HH:mm:ss");
        Calendar clockedInTime = GregorianCalendar.getInstance();
-  //      deliveryMenDetails deliveryMan1 = new deliveryMenDetails("Ali",20,"Male","Active");
+     deliveryMenDetails deliveryMan1 = new deliveryMenDetails("Ahmad",20,"Male","Active");
       
     public DemoTimerFrame() {
         initComponents();
@@ -66,7 +66,7 @@ public class DemoTimerFrame extends javax.swing.JFrame {
         
         lblTime.setText(sdf.format(new java.util.Date()));
    }
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
@@ -141,23 +141,28 @@ public class DemoTimerFrame extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>                        
 
-    private void btnClockInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnClockInActionPerformed
+    private void btnClockInActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
+        if(deliveryMan1.getClockInStatus()!="Clocked In"){
           Date clockedInDate = new Date();
            //Calendar clockInTime = GregorianCalendar.getInstance();
            clockedInTime.setTime(clockedInDate);
        lblClockStatus.setText("You Have Clocked In At " + sdf.format(clockedInDate));
-    //       deliveryMan1.setclockInStatus("Clocked In");
-           
+       deliveryMan1.setclockInStatus("Clocked In");
+        }else{
+             JOptionPane.showMessageDialog(null, "You Have Already Clocked In! ","Clock in Error", JOptionPane.ERROR_MESSAGE);
+        }
            
   
-    }//GEN-LAST:event_btnClockInActionPerformed
+    }                                          
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                         
 
              // Date clockedOutDate = new Date();
+             
+             if(deliveryMan1.getClockInStatus()=="Clocked In"){
                 Calendar clockedOutDate = GregorianCalendar.getInstance();
        
         int oHour = clockedOutDate.get(Calendar.HOUR);
@@ -168,17 +173,28 @@ public class DemoTimerFrame extends javax.swing.JFrame {
         
         int totalWorkingHours = oHour-iHour;
         int totalWorkingMinutes = oMinute-iMinute;
-              
-             //      deliveryMan1.setclockInStatus("Clocked Out");
         
-     JOptionPane.showMessageDialog(null, "You Have Been Clocked Out, Total Working Hours for Today is : " + totalWorkingHours+ "hours and "+ totalWorkingMinutes + "minutes" , "Clocked Out", JOptionPane.INFORMATION_MESSAGE);
-        
-        
+       double convertMinToHour = (double)totalWorkingMinutes*100/6000;
+       double total = totalWorkingHours+convertMinToHour;
+        deliveryMan1.setTotalWorkingHours(total);
+     //  deliveryMan1.setTotalWorkingMinutes(totalWorkingMinutes);
+     
        
+       
+        
+               deliveryMan1.setclockInStatus("Clocked Out");
+               lblClockStatus.setText("Clocked Out at "+sdf.format(new Date()));
+        
+     JOptionPane.showMessageDialog(null, "You Have Been Clocked Out, Total Working Hours  is :  "+total+"hours" , "Clocked Out", JOptionPane.INFORMATION_MESSAGE);
+        
+        
+             }else{
+                   JOptionPane.showMessageDialog(null, "You Can't Clock Out if You Did Not Clock In","Clock out Error", JOptionPane.ERROR_MESSAGE);
+             }
         
 
 // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }                                        
 
     /**
      * @param args the command line arguments
