@@ -61,6 +61,7 @@ public class menu {
         }
         return str;
     }
+}
     //---------------------------------tak boleh guna
     /*public List<Menu1> getMenu(){
         return menu;
@@ -74,4 +75,3 @@ public class menu {
         
         
     }*/
-}

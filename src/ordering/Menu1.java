@@ -66,6 +66,7 @@ public class Menu1 {
     return price;
     }
     
+
    public String toString(){
     return String.format("%s %s %s %s %.2f",menuID, menuName, menuDescription, restaurant, price);
     }

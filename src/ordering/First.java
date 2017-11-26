@@ -84,7 +84,6 @@ class First {
         String yesno="";
         do{            
             
-            
             System.out.println("MenuID  MenuName  Description  Price(RM)");
             System.out.println("=======================================");
             for(int i=0;i<m.size();i++){
@@ -230,3 +229,38 @@ class First {
         System.out.println("Thank You!");
     }
 }
+
+            
+        //-------------Temporary closed 
+       /* System.out.println("Order Confirmation");
+        System.out.println("==================");
+        System.out.println("MenuName Quantity Unit Price(RM) Subtotal(RM)");
+        System.out.println("=============================================");
+        double totalamt=0;
+        for(int i=0;i<oList.size();i++){
+           
+            System.out.println(oList.get(i).getMenuName()+" "+oList.get(i).getQty()+" "+oList.get(i).getPrice()+" "+(oList.get(i).getQty()*oList.get(i).getPrice()));
+            totalamt+=oList.get(i).getQty()*oList.get(i).getPrice();
+        }
+        System.out.println("Total Price(RM): "+totalamt);
+        //to add the order list into order
+        
+        System.out.println("Confirm your order?(yes/no)");
+        String confirm = scan.nextLine();
+        
+        
+        if(confirm.equals("yes")){
+            //order order1 = new order();
+            //int orderID = order1.getOrderID();
+            //String restaurant = "Blabla";
+            
+            order order2 = new order(orderID, restaurant, currentDate, oList);
+            custOrder.add(order2);
+            System.out.println("Transaction Done!");
+        //customerProcess();  
+            
+        }else{
+            System.out.println("Order is discarded!");
+        }
+        */
+    
