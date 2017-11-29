@@ -1,4 +1,4 @@
-package registration;
+package AddMenu;
 
 public class addMenu implements addMenuInterface {
 
@@ -7,6 +7,7 @@ public class addMenu implements addMenuInterface {
   private String foodName;
   private String foodId;
   private String restaurantName;
+
   
   public addMenu(double price,String descrip , String foodName, String foodId,String restaurantName ) {
     this.price = price;
