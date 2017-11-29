@@ -7,6 +7,37 @@ import java.util.Scanner;
 import AddMenu.addMenu;
 import update.update;
 
+        
+        
+        
+        
+        System.out.println("Enter your food restaurant name :");
+        restaurant_name = scan.nextLine();
+        
+        System.out.println("Enter your food name :");
+        foodName = scan.nextLine();
+        
+        System.out.println("Enter your Food ID :");
+        foodId = scan.nextLine();
+        
+        System.out.println("Enter your Food description :");
+        food_descrip = scan.nextLine();
+        
+        System.out.println("Enter your food price :");
+        price = scan.nextDouble();
+        
+        addMenu add1 = new addMenu(price,food_descrip,foodName,foodId,restaurant_name);
+        menu.add(add1);
+        /*addmenu.setDescrip(food_descrip);
+        addmenu.setFoodName(foodName);
+        addmenu.setFoodId(foodId);
+        addmenu.setPrice(price);
+        addmenu.setResName(restaurant_name);
+        */
+            scan.nextLine();
+             System.out.println("do you want to continue? Yes/No");
+             ans = (scan.nextLine()).toUpperCase();
+        }while(ans.equalsIgnoreCase("Yes"));
 public class Registration {
 
     static ArrayList<Register> register = new ArrayList<Register>();
