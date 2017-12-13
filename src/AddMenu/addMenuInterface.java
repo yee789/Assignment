@@ -1,4 +1,4 @@
-package registration;
+package AddMenu;
 
 public interface addMenuInterface {
 
