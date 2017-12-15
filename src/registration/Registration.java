@@ -5,43 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import AddMenu.addMenu;
+import registration.SetPromote.Promotion;
+import registration.deleteFoodMenu.deleteMenu;
 import update.update;
 
-        
-        
-        
-        
-        System.out.println("Enter your food restaurant name :");
-        restaurant_name = scan.nextLine();
-        
-        System.out.println("Enter your food name :");
-        foodName = scan.nextLine();
-        
-        System.out.println("Enter your Food ID :");
-        foodId = scan.nextLine();
-        
-        System.out.println("Enter your Food description :");
-        food_descrip = scan.nextLine();
-        
-        System.out.println("Enter your food price :");
-        price = scan.nextDouble();
-        
-        addMenu add1 = new addMenu(price,food_descrip,foodName,foodId,restaurant_name);
-        menu.add(add1);
-        /*addmenu.setDescrip(food_descrip);
-        addmenu.setFoodName(foodName);
-        addmenu.setFoodId(foodId);
-        addmenu.setPrice(price);
-        addmenu.setResName(restaurant_name);
-        */
-            scan.nextLine();
-             System.out.println("do you want to continue? Yes/No");
-             ans = (scan.nextLine()).toUpperCase();
-        }while(ans.equalsIgnoreCase("Yes"));
 public class Registration {
 
     static ArrayList<Register> register = new ArrayList<Register>();
-
+    static ArrayList<addMenu> menu = new ArrayList<addMenu>();
+    
     public void addUser() {
         String contactNo;
         String address;
@@ -100,6 +72,10 @@ public class Registration {
         Scanner scan = new Scanner(System.in);
         update update = new update();
         AddFoodMenu addmenu = new AddFoodMenu();
+        menu = AddMenu.AddFoodMenu.getlist();
+        deleteMenu d = new deleteMenu();
+        Promotion p = new Promotion();
+        
         String answer = "";
         do {
 
@@ -116,14 +92,18 @@ public class Registration {
                     break;
                 case 2:
                     addmenu.addFood();
+                    addmenu.showDetail(menu);
                     break;
 
                 case 3:
-                    update.updateInfo(register);
+                    update.updateInfo(menu);
                     break;
                 case 4:
                     r.showDetail();
+                    p.SetPromotion(menu);
                     break;
+                case  5:
+                    d.deleteMenu(menu);
             }
 
             System.out.println("do you want to continue for other action? Yes / No");

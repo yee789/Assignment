@@ -1,8 +1,8 @@
 package update;
 public interface updateInterface {
-    public void updateName();
-    public void updatePassword();
-    public void updateContact();
-    public void updateAddress();
-    public void updateEmail();
+    public void updateFoodId();
+    public void updateFoodName();
+    public void updateRestauramtName();
+    public void updatePrice();
+    public void updateFoodDescription();
 }

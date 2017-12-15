@@ -7,9 +7,9 @@ import AddMenu.addMenu;
 
 public class AddFoodMenu {
 
-    ArrayList<addMenu> menu = new ArrayList<addMenu>();
-
-    public void addFood() {
+static ArrayList<addMenu> menu = new ArrayList<addMenu>();
+    public static void addFood() {
+        
         String foodId = "";
         String foodName = "";
         double price = 0;
@@ -49,9 +49,15 @@ public class AddFoodMenu {
 
             ans = (scan.nextLine()).toUpperCase();
         } while (ans.equalsIgnoreCase("Yes"));
+        getlist();
     }
 
-    public void showDetail() {
+    public static ArrayList<addMenu> getlist(){
+        
+        return menu;
+    }
+    
+    public void showDetail(ArrayList<addMenu> menu) {
         for (int i = 0; i < menu.size(); ++i) {
             System.out.println("food id :" + menu.get(i).getFoodId());
             System.out.println("food description  :" + menu.get(0).getDescrip());
@@ -62,9 +68,7 @@ public class AddFoodMenu {
     }
 
     public static void main(String[] args) {
-        AddFoodMenu r = new AddFoodMenu();
-        r.addFood();
-        r.showDetail();
+        
     }
 
 }
