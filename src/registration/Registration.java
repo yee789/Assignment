@@ -9,6 +9,7 @@ import registration.SetPromote.Promotion;
 import registration.deleteFoodMenu.deleteMenu;
 import update.update;
 
+
 public class Registration {
 
     static ArrayList<Register> register = new ArrayList<Register>();

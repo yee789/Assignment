@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package clockInClockOut;
+package partD;
 
 /**
  *
@@ -18,6 +18,15 @@ public class deliveryMenDetails {
   private int age;
  private double totalWorkingHours=0; 
  private int totalWorkingMinutes=0;
+
+    public int getTotalHandlingJob() {
+        return totalHandlingJob;
+    }
+
+    public void setTotalHandlingJob(int totalHandlingJob) {
+        this.totalHandlingJob = totalHandlingJob;
+    }
+ private int totalHandlingJob;
  
     
   
@@ -35,13 +44,14 @@ public class deliveryMenDetails {
     this.age = age;
     this.clockInStatus=clockInStatus;
   }
-              public deliveryMenDetails(String name, int age, String gender, String status, String clockInStatus,String deliveryStatus) {
+              public deliveryMenDetails(String name, int age, String gender, String status, String clockInStatus,String deliveryStatus,int totalHandlingJob) {
     this.name = name;
     this.status = status;
     this.gender = gender;
     this.age = age;
     this.clockInStatus=clockInStatus;
     this.deliveryStatus=deliveryStatus;
+    this.totalHandlingJob=totalHandlingJob;
   }
        
   
